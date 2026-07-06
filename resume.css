@@ -1,0 +1,235 @@
+/* ============================================
+   CSS VARIABLES — Edit these to restyle globally
+   ============================================ */
+:root {
+  --color-text: #1a1a1a;
+  --color-text-secondary: #444;
+  --color-accent: #1a3a5c;
+  --color-rule: #1a3a5c;
+  --color-link: #1a3a5c;
+
+  --font-heading: "EB Garamond", "Georgia", serif;
+  --font-body: "Lato", "Helvetica Neue", sans-serif;
+
+  --page-width: 8.5in;
+  --page-min-height: 11in;
+  --page-margin-x: 0.6in;
+  --page-margin-top: 0.45in;
+  --page-margin-bottom: 0.45in;
+
+  --section-gap: 0.2in;
+  --item-gap: 0.08in;
+
+  --font-size-name: 26pt;
+  --font-size-contact: 9pt;
+  --font-size-section: 11.5pt;
+  --font-size-heading: 10pt;
+  --font-size-subheading: 9.5pt;
+  --font-size-body: 9.5pt;
+
+  --line-height-body: 1.35;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background: #e8e8e8;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   PAGE CONTAINER
+   ============================================ */
+.page {
+  width: var(--page-width);
+  min-height: var(--page-min-height);
+  margin: 0.5in auto;
+  padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
+  background: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  text-align: center;
+  margin-bottom: 0.15in;
+}
+
+.header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-name);
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.06in;
+}
+
+.contact-info {
+  font-size: var(--font-size-contact);
+  color: var(--color-text-secondary);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 0.2in;
+  line-height: 1.6;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+  margin-top: var(--section-gap);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-section);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1.5pt solid var(--color-rule);
+  padding-bottom: 0.02in;
+  margin-bottom: 0.1in;
+}
+
+.two-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.2in;
+}
+
+/* ============================================
+   ENTRY
+   ============================================ */
+.entry {
+  margin-bottom: var(--item-gap);
+}
+
+.entry-heading {
+  font-size: var(--font-size-heading);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.entry-subheading {
+  font-size: var(--font-size-subheading);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ============================================
+   BULLET LISTS
+   ============================================ */
+.bullets {
+  list-style: none;
+  margin-top: 0.03in;
+  padding-left: 0.15in;
+}
+
+.bullets li {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+  padding-left: 0.08in;
+  position: relative;
+  margin-bottom: 0.01in;
+}
+
+.bullets li::before {
+  content: "•";
+  position: absolute;
+  left: -0.08in;
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  :root {
+    --font-size-name: 24pt;
+    --font-size-contact: 8.5pt;
+    --font-size-section: 11pt;
+    --font-size-heading: 9.5pt;
+    --font-size-subheading: 9pt;
+    --font-size-body: 9pt;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.45in 0.45in;
+  }
+
+  body {
+    background: white;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .entry {
+    break-inside: avoid;
+  }
+
+  .section-title {
+    break-after: avoid;
+  }
+}
+
+/* ============================================
+   SCREEN RESPONSIVE (for mobile viewing)
+   ============================================ */
+
+@media screen and (max-width: 700px) {
+  body {
+    background: white;
+  }
+
+  .page {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 0.3in;
+    box-shadow: none;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 0.02in;
+  }
+}
