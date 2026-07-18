@@ -17,8 +17,8 @@
   --page-margin-top: 0.5in;
   --page-margin-bottom: 0.5in;
 
-  --section-gap: 0.14in;
-  --item-gap: 0.07in;
+  --section-gap: 0.12in;
+  --entry-gap: 0.06in;
 
   --font-size-name: 26pt;
   --font-size-contact: 9pt;
@@ -118,7 +118,7 @@ a:hover {
   letter-spacing: 0.04em;
   border-bottom: 1pt solid var(--color-rule);
   padding-bottom: 0.02in;
-  margin-bottom: var(--item--gap);
+  margin-bottom: 0.07in;
 }
 
 .two-column {
@@ -132,7 +132,7 @@ a:hover {
    ENTRY
    ============================================ */
 .entry {
-  margin-bottom: var(--item-gap);
+  margin-bottom: var(--entry-gap);
 }
 
 .entry-heading {
