@@ -1,5 +1,5 @@
 /* ============================================
-   CSS VARIABLES — Edit these to restyle globally
+   CSS VARIABLES
    ============================================ */
 :root {
   --color-text: #1a1a1a;
@@ -13,9 +13,9 @@
 
   --page-width: 8.5in;
   --page-min-height: 11in;
-  --page-margin-x: 0.6in;
-  --page-margin-top: 0.45in;
-  --page-margin-bottom: 0.45in;
+  --page-margin-x: 0.5in;
+  --page-margin-top: 0.5in;
+  --page-margin-bottom: 0.5in;
 
   --section-gap: 0.14in;
   --item-gap: 0.07in;
@@ -80,7 +80,7 @@ a:hover {
    ============================================ */
 .header {
   text-align: center;
-  margin-bottom: 0.15in;
+  margin-bottom: var(--section-gap);
 }
 
 .header h1 {
@@ -107,7 +107,6 @@ a:hover {
    ============================================ */
 .section {
   margin-top: var(--section-gap);
-  break-inside: auto;
 }
 
 .section-title {
@@ -119,7 +118,7 @@ a:hover {
   letter-spacing: 0.04em;
   border-bottom: 1pt solid var(--color-rule);
   padding-bottom: 0.02in;
-  margin-bottom: 0.07in;
+  margin-bottom: var(--item--gap);
 }
 
 .two-column {
@@ -171,7 +170,7 @@ a:hover {
 @media print {
   @page {
     size: letter;
-    margin: 0.45in 0.45in;
+    margin: 0.5in;
   }
 
   body {
