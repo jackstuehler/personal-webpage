@@ -30,7 +30,7 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --comment "Deploy ${GITHUB_SHA::7}" \
             --parameters commands="[
-              'set -euo pipefail',
+              'set -eu',
               'sudo -u deploy git -C $SITE_DIR fetch --all --prune',
               'sudo -u deploy git -C $SITE_DIR reset --hard $GITHUB_SHA',
               'sudo -u deploy git -C $SITE_DIR clean -fd',
