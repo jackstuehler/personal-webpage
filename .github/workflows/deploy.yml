@@ -1,47 +1,46 @@
 name: Deploy to EC2
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
-  id-token: write # required for OIDC
+  id-token: write
   contents: read
 
 env:
   AWS_REGION: us-east-1
-  INSTANCE_ID: i-0123456789abcdef0
-  SITE_DIR: /var/www/jackstuehler.com
+  INSTANCE_ID: i-0889502e3ef3f5544
+  SITE_DIR: /var/www/jackstuehler.com/html
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Assume AWS role via OIDC
+      - name: Get AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::111122223333:role/GitHubActionsDeployRole
+          role-to-assume: arn:aws:iam::425827481225:role/GitHubActionsDeployRole
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Trigger deploy via SSM
+      - name: Send deploy command
         id: send
         run: |
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids "$INSTANCE_ID" \
             --document-name "AWS-RunShellScript" \
-            --comment "Deploy ${GITHUB_SHA::7} from ${GITHUB_REF_NAME}" \
+            --comment "Deploy ${GITHUB_SHA::7}" \
             --parameters commands="[
               'set -euo pipefail',
-              'cd $SITE_DIR',
-              'git fetch --all --prune',
-              'git reset --hard $GITHUB_SHA',
-              'chown -R www-data:www-data $SITE_DIR'
+              'sudo -u deploy git -C $SITE_DIR fetch --all --prune',
+              'sudo -u deploy git -C $SITE_DIR reset --hard $GITHUB_SHA',
+              'sudo -u deploy git -C $SITE_DIR clean -fd',
+              'echo Deployed $GITHUB_SHA'
             ]" \
             --query "Command.CommandId" --output text)
           echo "command_id=$COMMAND_ID" >> "$GITHUB_OUTPUT"
+          echo "Sent command $COMMAND_ID"
 
-      - name: Wait for completion
+      - name: Wait for the result
         run: |
           aws ssm wait command-executed \
             --command-id "${{ steps.send.outputs.command_id }}" \
@@ -53,5 +52,4 @@ jobs:
             --query "{Status:Status,Output:StandardOutputContent,Error:StandardErrorContent}" \
             --output json | tee result.json
 
-          STATUS=$(jq -r '.Status' result.json)
-          [ "$STATUS" = "Success" ] || exit 1
+          [ "$(jq -r '.Status' result.json)" = "Success" ] || exit 1
