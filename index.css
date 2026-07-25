@@ -1,10 +1,11 @@
 :root {
   --background: #f6f7f8;
-  --text: #555;
-  --heading: #3f3f3f;
 
-  --link: #005cc5;
-  --link-hover: #003f8a;
+  --text: #555555;
+  --heading: #3b3b3b;
+
+  --link: #2c5f8a;
+  --link-hover: #1d4567;
 
   --font-body: "Lora", Georgia, serif;
   --font-heading: "EB Garamond", Georgia, serif;

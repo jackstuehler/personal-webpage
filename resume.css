@@ -51,7 +51,7 @@ body {
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   color: var(--color-text);
-  background: #e8e8e8;
+  background: #f6f7f8;
 }
 
 a {
@@ -72,7 +72,7 @@ a:hover {
   margin: 0.5in auto;
   padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
   background: white;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================
