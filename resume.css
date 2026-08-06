@@ -2,11 +2,11 @@
    CSS VARIABLES
    ============================================ */
 :root {
-  --color-text: #1a1a1a;
-  --color-text-secondary: #2a2a2a;
-  --color-accent: #243447;
-  --color-rule: #1a1a1a;
-  --color-link: #1a3a5c;
+  --color-text: #000000;
+  --color-text-secondary: #000000;
+  --color-accent: #000000;
+  --color-rule: #000000;
+  --color-link: #1a4f8b;
 
   --font-heading: "EB Garamond", "Georgia", serif;
   --font-body: "Lato", "Helvetica Neue", sans-serif;
