@@ -3,96 +3,218 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jack Stuehler — Computer Science and Mathematics student at Tufts University."
+    />
+
     <title>Jack Stuehler</title>
     <link rel="stylesheet" href="index.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
   <body>
-    <main class="page">
-      <header class="hero">
-        <h1>Jack Stuehler</h1>
+    <main>
+      <header>
+        <nav class="links">
+          <a href="resume.html">Resume</a>
 
-        <p>
-          B.S. in Computer Science and Mathematics, Minor in Spanish @ Tufts
-          University
-        </p>
+          <a
+            href="https://github.com/jackstuehler"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
 
-        <p>
-          Interested in software engineering, machine learning, data science,
-          and quantitative analytics.
-        </p>
+          <a
+            href="https://www.linkedin.com/in/jstuehler/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a href="mailto:jack.stuehler@tufts.edu">Email</a>
+        </nav>
+
+        <div>
+          <h1>Jack Stuehler</h1>
+
+          <p class="meta header-meta">
+            B.S. in Computer Science and Mathematics, Minor in Spanish @ Tufts
+            University
+          </p>
+        </div>
       </header>
 
-      <section class="grid">
-        <div class="column">
-          <h2>Projects</h2>
-          <p>
-            <strong>
-              <a href="https://jackstuehler.com/compiled" target="_blank">
-                Compiled
+      <div class="content">
+        <!-- Featured Project -->
+        <section class="featured">
+          <p class="label">Featured Project</p>
+
+          <div class="project-heading">
+            <div>
+              <h2 class="project-title">Compiled</h2>
+
+              <p class="meta project-meta">
+                Data visualization for comparing colleges
+              </p>
+            </div>
+
+            <div class="links project-links">
+              <a
+                href="https://jackstuehler.com/compiled"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project ↗
               </a>
-            </strong>
-            <br />
-            Full-stack web app for comparing U.S. colleges using Department of
-            Education data, with interactive filtering, rankings, and data
-            visualization.
+
+              <a
+                href="https://github.com/jackstuehler/compiled"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+
+          <p class="description">
+            Full-stack web app for comparing U.S. colleges by major-specific
+            outcomes using Department of Education College Scorecard data.
+            Explore and filter 1,900+ institutions across 235 majors through
+            sortable rankings and an interactive scatterplot.
           </p>
 
-          <p>
-            <strong>Reinforcement Learning for Adaptase Tail Trimming</strong>
-            <br />
-            Research project applying reinforcement learning to improve DNA
-            sequencing quality by identifying and trimming synthetic Adaptase
-            tails from ssWGBS reads.
-          </p>
-        </div>
+          <p class="meta">Next.js · TypeScript · MySQL</p>
 
-        <div class="column">
-          <h2>Experience</h2>
-          <p>
-            <strong>Computer Science Instructor</strong><br />
-            Create & Learn
-          </p>
-          <p>
-            <strong>Computer Science Teaching Assistant</strong><br />
-            SMASH Academy
-          </p>
-          <p>
-            <strong>Lifeguard & Water Safety Instructor</strong><br />
-            Town of Westwood
-          </p>
-          <p>
-            <strong>Founder</strong><br />
-            Lacrosse Stick Stringing & Repair Service
-          </p>
-        </div>
+          <a
+            class="browser"
+            href="https://jackstuehler.com/compiled/scatter"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the Compiled scatterplot"
+          >
+            <div class="browser-bar">
+              <div class="dots" aria-hidden="true">
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+            </div>
 
-        <div class="column">
-          <h2>Coursework</h2>
-          <p><strong>GPA:</strong> 4.0</p>
-          <p>Data Structures (A+)</p>
-          <p>Discrete Math (A+)</p>
-          <p>Linear Algebra</p>
-          <p>Intro to Computer Science</p>
-          <p><strong>Currently Taking:</strong></p>
-          <p>Machine Structure & Assembly Language Programming</p>
-          <p>Calculus III</p>
+            <div class="browser-content">
+              <img
+                src="scatterplot.png"
+                alt="Compiled college comparison scatterplot"
+              />
+            </div>
+          </a>
+        </section>
 
-          <p></p>
-        </div>
+        <!-- Background -->
+        <aside>
+          <div class="split">
+            <section>
+              <h2>Experience</h2>
 
-        <div class="column">
-          <h2>Links</h2>
-          <p><a href="resume.html">Resume</a></p>
-          <p><a href="https://www.linkedin.com/in/jstuehler/">LinkedIn</a></p>
-          <p><a href="https://github.com/jackstuehler">GitHub</a></p>
-          <p><a href="mailto:Jack.Stuehler@tufts.edu">Email</a></p>
-        </div>
-      </section>
+              <div class="item">
+                <strong>Computer Science Instructor</strong>
+                <p class="meta">Create &amp; Learn</p>
+              </div>
+
+              <div class="item">
+                <strong>Computer Science Teaching Assistant</strong>
+                <p class="meta">SMASH Academy at Northeastern University</p>
+              </div>
+
+              <div class="item">
+                <strong>Lifeguard &amp; Water Safety Instructor</strong>
+                <p class="meta">Westwood Recreation Department</p>
+              </div>
+
+              <div class="item">
+                <strong>Founder and Operator</strong>
+                <p class="meta">
+                  Lacrosse Stick Stringing &amp; Repair Service
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2>Relevant Coursework</h2>
+
+              <p class="subheading">GPA: 4.0</p>
+
+              <div class="list">
+                <p>Data Structures (A+)</p>
+                <p>Discrete Mathematics (A+)</p>
+                <p>Linear Algebra</p>
+                <p>Intro to Computer Science</p>
+              </div>
+
+              <p class="subheading">In Progress</p>
+
+              <div class="list">
+                <p>Machine Structure &amp; Assembly-Language Programming</p>
+                <p>Calculus III</p>
+              </div>
+            </section>
+          </div>
+
+          <!-- Research -->
+          <section class="section divided">
+            <p class="label">Research</p>
+
+            <h2 class="research-title">
+              Reinforcement Learning for Adaptase Tail Trimming
+            </h2>
+
+            <p class="meta">
+              3-person research team | Accelerator Fellow, Tufts Data Science
+              Club | Python, NumPy
+            </p>
+
+            <p class="meta research-description">
+              Applying reinforcement learning to identify and trim synthetic
+              Adaptase tails from ssWGBS reads. Developed probabilistic tail
+              models and a Python simulator, helped design the agent's action
+              space and reward function, and curated sequencing datasets for
+              training and evaluation.
+            </p>
+          </section>
+
+          <!-- Skills -->
+          <section class="section divided skills">
+            <h2 class="skills-title">Skills</h2>
+
+            <div>
+              <strong>Languages</strong>
+
+              <p class="meta">
+                C++, C, Python, Java, SQL, TypeScript, JavaScript, HTML, CSS
+              </p>
+            </div>
+
+            <div>
+              <strong>Frameworks &amp; Tools</strong>
+
+              <p class="meta">
+                Next.js, React, MySQL, Git, GitHub, Linux, Valgrind
+              </p>
+            </div>
+
+            <div>
+              <strong>Spoken</strong>
+
+              <p class="meta">
+                English, Spanish (Professional Working Proficiency)
+              </p>
+            </div>
+          </section>
+        </aside>
+      </div>
     </main>
   </body>
 </html>
