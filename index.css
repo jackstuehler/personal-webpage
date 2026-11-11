@@ -477,22 +477,37 @@ a:focus-visible {
    COURSEWORK
    ============================================ */
 
-.coursework-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 36px 64px;
-  max-width: 950px;
+.coursework-section .section-heading {
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
-.coursework-grid h3 {
-  margin-bottom: 14px;
-  font-size: 17px;
+.coursework-gpa {
+  color: var(--secondary);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.coursework-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.coursework-group {
+  min-width: 0;
+}
+
+.coursework-group h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
   font-weight: 650;
 }
 
 .plain-list {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -501,7 +516,7 @@ a:focus-visible {
 .plain-list li {
   color: var(--secondary);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /*
@@ -602,6 +617,10 @@ a:focus-visible {
 
   .project-details {
     max-width: 720px;
+  }
+
+  .coursework-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .skills-grid {
